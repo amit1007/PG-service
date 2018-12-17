@@ -1,0 +1,29 @@
+<h1> Login</h1>
+<hr>
+  <form id="login">
+      <!-- #myform="ngform" -->
+    <fieldset>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" 
+        placeholder="Enter email" type="email"name="email"require="require"[(ngModel)]="login">
+        <!-- <span class="error" >
+          login should not be blank
+        </span> -->
+        </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input class="form-control" id="exampleInputPassword1" 
+        placeholder="Password" type="password" name="password"require="require"
+        [(ngModel)]="password">
+        <!-- <span class="error">
+          password should be entered
+        </span> -->
+      </div>
+     </fieldset>
+      <button type="submit" class="btn btn-primary"(click)="onsubmitclick(ngform)">Login</button>&nbsp;
+     <button type="Register" class="btn btn-primary"(click)="onregisterclick('/Register')">Register</button>&nbsp;
+      <a button routerLink="../forget">forget password</a><br>
+      {{message}}
+    
+  </form>

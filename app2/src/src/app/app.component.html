@@ -1,0 +1,50 @@
+<header><h1 align="center">Room For Rent</h1></header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a> <img src="../../assets/logo.png"routerLink="/login"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <!-- <a class="nav-link" href="./app.component.html">Home <span class="sr-only">(current)</span></a> -->
+          <a class="nav-link" routerLink="/register">Register</a>&nbsp;
+        </li>
+        <li class="nav-item">
+          <!-- <a class="nav-link" href="./aboutus/aboutus.component.html">About Us</a> -->
+          <a class="nav-link"routerLink="/aboutus">contact us</a> &nbsp;
+        </li>
+        <li class="nav-item">
+          <!-- <a class="nav-link" href="./contactus/contactus.component.html">Contact Us</a> -->
+          <a class="nav-link" routerLink="/contactus">about us</a> &nbsp;
+        </li>
+        
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" placeholder="Search" type="text">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav><br>
+
+<router-outlet></router-outlet><br><br><br>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<footer>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4"> <span> Copyright &copy; 2018 Room For Rent Technologies Pvt. Ltd.</span> </div>
+          <div class="text-center center-block">
+          <a href="https://www.facebook.com/bootsnipp"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+          <a href="https://twitter.com/bootsnipp"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+          <a href="https://plus.google.com/+Bootsnipp-page"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
+          <a href="mailto:bootsnipp@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+        </div>
+      </div>
+    </div>    
+</footer>
+</nav>
+
+
