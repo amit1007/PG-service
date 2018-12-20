@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { RegisterRoutingModule } from './register/register-routing.module';
 import { AppComponent } from './app.component';
 import { MyNavComponent } from './my-nav/my-nav.component';
 import { RegisterComponent } from './register/register.component';
@@ -13,11 +14,12 @@ import { FeatureComponent } from './feature/feature.component';
 import { ForgetComponent } from './forget/forget.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { PersonalComponent } from './personal/personal.component';
-import { WorkComponent } from './work/work.component';
-import { CompletedComponent } from './completed/completed.component';
-import { IdProofComponent } from './id-proof/id-proof.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { PersonalComponent } from './navigation/personal/personal.component';
+import { WorkComponent } from './navigation/work/work.component';
+import { CompletedComponent } from './navigation/completed/completed.component';
+import { IdProofComponent } from './navigation/id-proof/id-proof.component';
+import { NavbarComponent } from './navigation/navbar/navbar.component';
+import { ProgressbarComponent } from './progressbar/progressbar.component';
 
 // const appRoutes: Routes = [
 //   {path: '',redirectTo: '/login',pathMatch: 'full'},
@@ -45,13 +47,14 @@ import { NavbarComponent } from './navbar/navbar.component';
     WorkComponent,
     CompletedComponent,
     IdProofComponent,
-    NavbarComponent
+    NavbarComponent,
+    ProgressbarComponent
   ],
   imports: [
     //  RouterModule.forRoot(appRoutes ,{ enableTracing: true } ),
     BrowserModule,
     FormsModule,
-    AppRoutingModule,
+    AppRoutingModule,RouterModule,RegisterRoutingModule,
    ],
   providers: [],
   bootstrap: [AppComponent]

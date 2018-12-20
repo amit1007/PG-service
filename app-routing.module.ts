@@ -7,31 +7,37 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { AdminComponent } from './admin/admin.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component'
-import { PersonalComponent } from './personal/personal.component';
-import { WorkComponent } from './work/work.component';
-import { CompletedComponent } from './completed/completed.component';
-import { IdProofComponent } from './id-proof/id-proof.component';
+import { PersonalComponent } from './navigation/personal/personal.component';
+import { WorkComponent } from './navigation/work/work.component';
+import { CompletedComponent } from './navigation/completed/completed.component';
+import { IdProofComponent } from './navigation/id-proof/id-proof.component';
 
-import { WorkflowGuard }        from './workflow/workflow-guard.service';
+import { WorkflowGuard }        from './navigation/workflow/workflow-guard.service';
 //import { WorkflowService }      from './workflow/workflow.service';
+import { ProgressbarComponent } from './progressbar/progressbar.component';
 
 const routes: Routes = [
   {path: '',redirectTo: '/login',pathMatch: 'full'},
-  {path: 'register',component:RegisterComponent},
+  
   {path: 'login',component:LoginComponent},
   {path: 'contactus',component:ContactusComponent},
   {path: 'admin',component:AdminComponent},
   {path: 'aboutus',component:AboutusComponent},
-  { path: '**', component: PageNotFoundComponent},
-  {path: 'personal',component:PersonalComponent},
-  {path: 'work',component:WorkComponent},
-  {path: 'completed',component:CompletedComponent},
-  {path: 'id-proof',component:IdProofComponent},
+  // {path: '**', component: PageNotFoundComponent},
+  
+  {path: 'register',component:RegisterComponent},
+    {path: 'register/personal',component:PersonalComponent},
+    {path: 'register/work',component:WorkComponent},
+    {path: 'register/completed',component:CompletedComponent},
+    {path: 'register/id-proof',component:IdProofComponent},
+  
+  
+  {path: 'progressbar',component:ProgressbarComponent},
   
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{ useHash: true} ) ],
+  imports: [RouterModule.forRoot(routes) ],
   exports: [RouterModule],
   providers: [WorkflowGuard]
 })
