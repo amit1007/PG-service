@@ -1,0 +1,56 @@
+<p>
+  nav works!
+</p>
+<hr>
+<div class="col-mod-6">
+<button (click)="openModal('custom-modal-1')">Open Modal 1</button>&nbsp;
+<button (click)="openModal('custom-modal-2')">Open Modal 2</button>
+<!-- for button1 -->
+<modal id="custom-modal-1">
+  <div class="modal">
+      <div class="modal-body">
+        <div>
+          <webcam [height]="500" [width]="500" [trigger]="triggerObservable" (imageCapture)="handleImage($event)" *ngIf="showWebcam"
+              [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable"
+              [videoOptions]="videoOptions"
+              (cameraSwitched)="cameraWasSwitched($event)"
+              (initError)="handleInitError($event)"
+          ></webcam>
+          <br/>
+          <!-- <input type="Take a snapshot" id="upload_driver_photo" class="dropify" formControlName="op_profile" 
+          [ngClass]="{ 'is-invalid': submitted && p.op_profile.errors}" 
+          (click)="triggerSnapshot();" />&nbsp;
+          <input type="Toggle webcam" id="upload_driver_photo" class="dropify" formControlName="op_profile" 
+          [ngClass]="{ 'is-invalid': submitted && p.op_profile.errors}" 
+          (click)="toggleWebcam();" />&nbsp;
+          <input type="upload" id="upload_driver_photo" class="dropify" formControlName="op_profile" 
+          [ngClass]="{ 'is-invalid': submitted && p.op_profile.errors}" 
+          (change)="onFileChange($event)" /> -->
+          <button class="actionBtn" (click)="triggerSnapshot();">Capture Image</button>&nbsp;
+          <button class="actionBtn" (click)="toggleWebcam();">Off/On Webcam</button>
+          <br/>
+          <button class="actionBtn" (click)="showNextWebcam(true);" [disabled]="!multipleWebcamsAvailable">Next Webcam</button>&nbsp;
+            <input id="cameraSwitchCheckbox" type="checkbox" [(ngModel)]="allowCameraSwitch"><label for="cameraSwitchCheckbox">Allow Camera Switch</label>
+          <br/>
+          <br>
+          <!-- <input type="file" id="upload_driver_photo" class="dropify" formControlName="op_profile" [ngClass]="{ 'is-invalid': submitted && p.op_profile.errors}" (change)="onFileChange($event)" /> -->
+          
+          </div>
+          <button (click)="closeModal('custom-modal-1');">Close</button>
+      </div>
+  </div>
+  <div class="modal-background"></div>
+</modal>
+
+<!-- for button2  -->
+<modal id="custom-modal-2">
+  <div class="modal">
+      <div class="modal-body">
+          <h1 style="height:1000px">upload image by browser</h1>
+          <!-- <input type="file" id="upload_driver_photo" class="dropify" formControlName="op_profile" [ngClass]="{ 'is-invalid': submitted && p.op_profile.errors}" (change)="onFileChange($event)" /> -->
+          
+          <button (click)="closeModal('custom-modal-2');">Close</button>
+      </div>
+  </div>
+  <div class="modal-background"></div>
+</modal>
